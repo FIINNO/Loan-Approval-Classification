@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
-import kagglehub
 
 # Data cleaning and pre-processing
 def process_data(data, correlation_threshold=0.01):
@@ -25,8 +24,7 @@ def process_data(data, correlation_threshold=0.01):
 
 
 
-def load_dataset():
-    path = kagglehub.dataset_download("taweilo/loan-approval-classification-data")
+def load_dataset(path):
     dataset = pd.read_csv(path)
     processed_dataset = process_data(dataset)
     return processed_dataset
